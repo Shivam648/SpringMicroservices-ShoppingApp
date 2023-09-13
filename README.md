@@ -60,4 +60,7 @@ As part of this tutorial, we will build a Simple Online Shopping Application. Th
 - Inventory Service
 - Notification Service
 
+![Image Alt Text](images/architecture.png)
+
+
 Let's embark on this journey to explore the world of Spring Cloud Microservices!
