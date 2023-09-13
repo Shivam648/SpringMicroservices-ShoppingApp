@@ -1,58 +1,63 @@
-# SpringMicroShop - Online Shopping Application
+# Spring Cloud Microservices Tutorial
 
-SpringMicroShop is a simple online shopping application built using the Spring Boot microservices architecture. This project demonstrates best practices in developing scalable and maintainable microservices for e-commerce, including user authentication, product management, shopping cart functionality, and order processing.
+Welcome to the Spring Cloud Microservices Tutorial series! In this tutorial series, we will explore various modules of Spring Cloud that help us build robust microservices using the Spring Framework.
 
 ## Table of Contents
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Architecture](#architecture)
-- [Contributing](#contributing)
-- [License](#license)
+- [Introduction](#introduction)
+- [Spring Cloud Config Server](#spring-cloud-config-server)
+- [Spring Cloud Bus](#spring-cloud-bus)
+- [Spring Cloud Netflix Eureka](#spring-cloud-netflix-eureka)
+- [Spring Cloud Circuit Breaker](#spring-cloud-circuit-breaker)
+- [Spring Cloud Sleuth](#spring-cloud-sleuth)
+- [Spring Cloud Gateway](#spring-cloud-gateway)
+- [Spring Cloud Stream](#spring-cloud-stream)
+- [Distributed Logging using ELK Stack](#distributed-logging-using-elk-stack)
+- [Sample Project Architecture](#sample-project-architecture)
 
-## Features
+## Introduction
 
-- User authentication and authorization.
-- Product catalog and management.
-- Shopping cart functionality.
-- Order processing and tracking.
+The main module that helps us write microservices using the Spring Framework is Spring Cloud. In this tutorial series, we will mainly concentrate on the following modules, which are part of Spring Cloud:
 
-## Technologies Used
+## Spring Cloud Config Server
 
-- Java with Spring Boot
-- Spring Cloud for microservices orchestration
-- Spring Security for authentication and authorization
-- Docker for containerization
-- MySQL for database storage
-- React for the frontend (optional, if applicable)
+Spring Cloud Config Server is used to externalize the configuration of our microservices into a centralized place. When there are changes in the configuration, our applications can be updated without the need to restart them. This module provides options to implement centralized configuration, e.g., using a Git Repository or HashiCorp Consul. We will also use HashiCorp Vault as one of the backends to maintain secrets for our application.
 
-## Getting Started
+## Spring Cloud Bus
 
-To get started with this project, follow these steps:
+The Spring Cloud Bus module contains a lightweight message broker implementation used to broadcast messages to other services. In our project, we will use this module to broadcast configuration changes in our Config Server.
 
-1. Clone the repository: `git clone https://github.com/your-username/SpringMicroShop.git`
-2. Navigate to the project directory: `cd SpringMicroShop`
-3. [Insert instructions for setting up the development environment, including prerequisites and configuration steps]
+## Spring Cloud Netflix Eureka
 
-## Usage
+Spring Cloud Netflix Eureka is used to implement the Service Registry and Discovery Pattern in Microservices architecture. It provides a reliable way to scale services and enable inter-service communication without hard-coding service information. This module uses Netflix’s Eureka library to provide this functionality. Other alternatives include Spring Cloud Consul and Spring Cloud Zookeeper.
 
-[Provide instructions on how to use your application, including starting the microservices, interacting with APIs, and any other relevant details.]
+## Spring Cloud Circuit Breaker
 
-## Architecture
+Inter-service communication is common in the Microservices architecture. If one of the services is down, the other service communicating with it should be able to handle this failure gracefully. Spring Cloud Circuit Breaker provides an abstraction over different Circuit Breaker implementations like Resilience4J, Hystrix, Sentinel, etc. In our project, we will use Spring Cloud Circuit Breaker with Resilience4J.
 
-[Explain the microservices architecture, including service boundaries, communication protocols, and any architectural diagrams if available.]
+## Spring Cloud Sleuth
 
-## Contributing
+In Microservice Architecture, debugging and tracing errors can be challenging. Spring Cloud Sleuth provides the functionality to trace inter-service calls.
 
-[Explain how others can contribute to your project, including guidelines for pull requests and issue reporting.]
+## Spring Cloud Gateway
 
-## License
+Spring Cloud Gateway helps us implement the API Gateway pattern by hiding the complexity of our microservices from external clients. All traffic goes through the API Gateway, which routes requests to the appropriate service. It also handles cross-cutting concerns like security, monitoring, rate-limiting, and resiliency. We will secure our microservices using Keycloak as an Authorization Server together with the Spring Cloud Gateway.
 
-This project is licensed under the [LICENSE NAME] - see the [LICENSE.md](LICENSE.md) file for details.
+## Spring Cloud Stream
 
-## Acknowledgments
+Spring Cloud Stream allows us to implement asynchronous communication between our microservices using an event-driven architecture. We will use RabbitMQ as a message broker to implement event-driven microservices.
 
-[Optional: Mention any contributors, libraries, or resources that you'd like to acknowledge.]
+## Distributed Logging using ELK Stack
 
+While not part of the Spring Cloud Stack, we will implement Centralized Logging for our microservices using the ELK Stack (Elasticsearch, Logstash, and Kibana).
+
+## Sample Project Architecture
+
+As part of this tutorial, we will build a Simple Online Shopping Application. The main focus of this tutorial is to explain Microservices Architecture and its implementation, so the functionality of the application will be minimal. We will implement the following services:
+
+- Product Service
+- Order Service
+- Inventory Service
+- Notification Service
+
+Let's embark on this journey to explore the world of Spring Cloud Microservices!
