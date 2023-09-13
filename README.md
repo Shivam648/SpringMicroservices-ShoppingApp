@@ -64,3 +64,6 @@ As part of this tutorial, we will build a Simple Online Shopping Application. Th
 
 
 Let's embark on this journey to explore the world of Spring Cloud Microservices!
+
+[Spring Initializer Configuration](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.1.3&packaging=jar&jvmVersion=17&groupId=com.springmicroservices&artifactId=product-service&name=product-service&description=Product%20Service&packageName=com.springmicroservices.product-service&dependencies=lombok,web,data-mongodb)
+
